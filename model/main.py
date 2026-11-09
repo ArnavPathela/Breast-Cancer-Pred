@@ -36,7 +36,7 @@ def create_Model(data):
 
     return model, scalar
 def get_clean_data():
-    data = pd.read_csv('../data/data.csv')
+    pd.read_csv(os.path.join(BASE_DIR, '..', 'data', 'data.csv'))
 
     data = data.drop(['Unnamed: 32'],axis=1)
 
