@@ -11,8 +11,11 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def add_predictions(input_data):
-    model = pickle.load(open("../model/model.pkl",'rb'))
-    scalar = pickle.load(open('../model/scalar.pkl',"rb"))
+    model_path = os.path.join(BASE_DIR, '..', 'model', 'model.pkl')
+    scalar_path = os.path.join(BASE_DIR, '..', 'model', 'scalar.pkl')
+
+    model = pickle.load(open(model_path, 'rb'))
+    scalar  = pickle.load(open(scalar_path, 'rb'))
 
     input_array = np.array(list(input_data.values())).reshape(1,-1)
 
@@ -107,7 +110,8 @@ def get_radar_chart(input_data):
 
     
 def get_clean_data():
-    data = pd.read_csv('../data/data.csv')
+    data_path = os.path.join(BASE_DIR, '..', 'data', 'data.csv')
+    data = pd.read_csv(data_path)
 
     data = data.drop(['Unnamed: 32'],axis=1)
 
