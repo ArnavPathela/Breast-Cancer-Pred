@@ -4,6 +4,9 @@ import pickle
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 
